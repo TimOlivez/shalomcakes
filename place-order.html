@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Order - Shalom Cakes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="flex items-center justify-between p-4 max-w-7xl mx-auto">
+      <h1 class="text-2xl font-bold text-pink-600">Shalom Cakes</h1>
+      <nav class="flex space-x-4 text-gray-600">
+        <a href="index.html" class="hover:text-pink-600">Home</a>
+        <a href="products.html" class="hover:text-pink-600">Products</a>
+        <a href="quote.html" class="hover:text-pink-600">Request a Quote</a>
+        <a href="contact.html" class="hover:text-pink-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto p-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Place Your Order</h2>
+
+    <!-- Order Summary -->
+    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">🎂 Chocolate Bliss Cake</h3>
+      <p class="text-sm text-gray-600 mb-2">Rich chocolate cake with ganache and berries</p>
+      <p class="text-sm text-gray-600 mb-4">Base Price: <span class="font-bold text-pink-600">UGX 100,500</span></p>
+
+      <div class="flex items-center space-x-2">
+        <label for="quantity" class="text-sm text-gray-700">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" class="w-16 px-2 py-1 border border-gray-300 rounded focus:ring-pink-600">
+        <span class="text-sm text-gray-700">Total:</span>
+        <span id="totalPrice" class="text-pink-600 font-semibold text-sm">UGX 100,500</span>
+      </div>
+    </div>
+
+    <!-- Order Form -->
+    <form class="bg-white p-6 rounded-lg shadow-md space-y-6">
+      <div>
+        <label for="fullName" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+        <input type="text" id="fullName" required class="w-full border px-4 py-2 rounded focus:ring-2 focus:ring-pink-600">
+      </div>
+
+      <div>
+        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+        <input type="email" id="email" required class="w-full border px-4 py-2 rounded focus:ring-2 focus:ring-pink-600">
+      </div>
+
+      <div>
+        <label for="address" class="block text-gray-700 font-semibold mb-2">Delivery Address</label>
+        <textarea id="address" rows="2" required class="w-full border px-4 py-2 rounded focus:ring-2 focus:ring-pink-600"></textarea>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="date" class="block text-gray-700 font-semibold mb-2">Preferred Date</label>
+          <input type="date" id="date" required class="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-pink-600">
+        </div>
+        <div>
+          <label for="time" class="block text-gray-700 font-semibold mb-2">Preferred Time</label>
+          <input type="time" id="time" required class="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-pink-600">
+        </div>
+      </div>
+
+      <div>
+        <label for="notes" class="block text-gray-700 font-semibold mb-2">Additional Notes</label>
+        <textarea id="notes" rows="3" placeholder="Any message or cake customization?" class="w-full border px-4 py-2 rounded focus:ring-2 focus:ring-pink-600"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-pink-600 text-white font-semibold py-2 rounded hover:bg-pink-700 transition">
+        Confirm Order
+      </button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-md mt-12">
+    <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-600">
+      <div>
+        <h4 class="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <i class="fas fa-store text-pink-600"></i> Shalom Cakes
+        </h4>
+        <p>Your trusted cake partner for weddings, birthdays, and every moment in between.</p>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <i class="fas fa-link text-pink-600"></i> Quick Links
+        </h4>
+        <ul class="space-y-1 text-sm">
+          <li><a href="products.html" class="hover:text-pink-600">Products</a></li>
+          <li><a href="quote.html" class="hover:text-pink-600">Request a Quote</a></li>
+          <li><a href="contact.html" class="hover:text-pink-600">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <i class="fas fa-gift text-pink-600"></i> Premier Packages
+        </h4>
+        <p>Deluxe bundles with elegant wrapping, custom cards, and priority delivery. Perfect for gifts.</p>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-4">
+      © 2025 Shalom Cakes. All rights reserved. Built with ❤️ by TIM OLIVEZ
+    </div>
+  </footer>
+
+  <!-- Script for live price calculation -->
+  <script>
+    const quantityInput = document.getElementById('quantity');
+    const totalPrice = document.getElementById('totalPrice');
+    const unitPrice = 100500;
+
+    quantityInput.addEventListener('input', () => {
+      const qty = parseInt(quantityInput.value) || 1;
+      totalPrice.textContent = `UGX ${qty * unitPrice}`;
+    });
+  </script>
+
+</body>
+</html>

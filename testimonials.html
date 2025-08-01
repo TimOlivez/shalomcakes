@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - Shalom Cakes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .sidebar {
+      transition: transform 0.3s ease-in-out;
+    }
+    .sidebar-hidden {
+      transform: translateX(-100%);
+    }
+    @media (min-width: 768px) {
+      .sidebar-hidden {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+ <header class="bg-white shadow-md">
+  <div class="flex flex-wrap items-center justify-between p-4 max-w-7xl mx-auto">
+    <h1 class="text-2xl font-bold text-pink-600">Shalom Cakes</h1>
+    <nav class="flex space-x-4 text-gray-600 mt-2 md:mt-0">
+     <a href="index.html" class="text-pink-600 font-bold p-2">Home</a>
+        <a href="products.html" class="text-gray-600 hover:text-pink-600 p-2">Products</a>
+        <a href="about.html" class="text-gray-600 hover:text-pink-600 p-2">About</a>
+        <a href="services.html" class="text-gray-600 hover:text-pink-600 p-2">Services</a>
+        <a href="testimonials.html" class="text-gray-600 hover:text-pink-600 p-2">Testimonials</a>
+        <a href="contact.html" class="text-gray-600 hover:text-pink-600 p-2">Contact</a>
+    </nav >
+  </div>
+</header>
+
+
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Customer Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600 italic">"Shalom Cakes made our wedding cake, and it was absolutely stunning! The flavors were incredible, and our guests couldn’t stop raving about it."</p>
+          <p class="text-gray-800 font-semibold mt-2">– Sarah M.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600 italic">"The cupcakes for our office party were a hit! Perfectly baked and beautifully decorated. Thank you, Shalom Cakes!"</p>
+          <p class="text-gray-800 font-semibold mt-2">– James T.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600 italic">"I ordered a custom birthday cake, and it exceeded all expectations. The design was perfect, and the taste was out of this world!"</p>
+          <p class="text-gray-800 font-semibold mt-2">– Emily R.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600 italic">"The macarons are to die for! Every bite is a burst of flavor. Shalom Cakes is now my go-to bakery."</p>
+          <p class="text-gray-800 font-semibold mt-2">– Michael L.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-md mt-6">
+    <div class="p-4 text-center text-gray-600 max-w-7xl mx-auto">
+      <p>© 2025 Shalom Cakes. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Sidebar Toggle -->
+  <script>
+    const toggleSidebar = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
+    toggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar-hidden');
+    });
+  </script>
+</body>
+</html>

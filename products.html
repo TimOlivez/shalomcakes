@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Shalom Cakes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .nav-hidden {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .nav-hidden {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="flex items-center justify-between p-4 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-4">
+        <img src="logo.png" alt="Shalom Cakes Logo" class="h-12 w-auto" onerror="this.style.display='none';">
+        <h1 class="text-2xl font-bold text-pink-600">Shalom Cakes</h1>
+      </div>
+      <button id="toggleNav" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+      <nav id="navMenu" class="nav-hidden flex-col md:flex md:flex-row md:space-x-4 absolute md:static top-16 left-0 right-0 bg-white md:bg-transparent p-4 md:p-0 z-10">
+        <a href="index.html" class="text-gray-600 hover:text-pink-600 p-2">Home</a>
+        <a href="products.html" class="text-pink-600 font-bold p-2">Products</a>
+        <a href="about.html" class="text-gray-600 hover:text-pink-600 p-2">About</a>
+        <a href="services.html" class="text-gray-600 hover:text-pink-600 p-2">Services</a>
+        <a href="testimonials.html" class="text-gray-600 hover:text-pink-600 p-2">Testimonials</a>
+        <a href="contact.html" class="text-gray-600 hover:text-pink-600 p-2">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Products</h2>
+    <div class="space-y-8">
+      <!-- Custom Cakes -->
+      <div>
+        <!-- <input type="text" id="cartItems" placeholder="Search products..." class="text-gray-600 mb-2"> -->
+
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Custom Cakes</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/chocolate 3.jpeg" alt="Chocolate Layer Cake with ganache and berries" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Chocolate Bliss Cake</h4>
+            <p class="text-gray-600 mb-2">Rich chocolate cake with creamy ganache and fresh berries.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+            <p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 150,500</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Chocolate Bliss Cake" data-price="100500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Chocolate Bliss Cake" data-price="166500">Add to Cart</button>
+            </div>
+          </div>
+ <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/elegant wedding cake.jpg" alt="Chocolate Layer Cake with ganache and berries" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Elegant wedding cake</h4>
+            <p class="text-gray-600 mb-2">Rich chocolate cake with creamy ganache and fresh berries.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 2,000,000</strong></span>
+            <p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 2,500,500</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Chocolate Bliss Cake" data-price="2500500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Chocolate Bliss Cake" data-price="166500">Add to Cart</button>
+            </div>
+          </div>
+
+           <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/custom wedding.webp" alt="Chocolate Layer Cake with ganache and berries" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Customized wedding cakes</h4>
+            <p class="text-gray-600 mb-2">Customise your wedding cake and bake it for</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+            <p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 150,500</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Chocolate Bliss Cake" data-price="100500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Chocolate Bliss Cake" data-price="166500">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Vanilla Cake with Fresh Strawberry Frosting.jpeg" alt="Vanilla Buttercream Cake with colorful sprinkles" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Vanilla Celebration Cake</h4>
+            <p class="text-gray-600 mb-2">Classic vanilla cake with buttercream frosting and sprinkles.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 150,OOO</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Vanilla Celebration Cake" data-price="150000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Vanilla Celebration Cake" data-price="148000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/velvet 1.jpg " alt="Red Velvet Cake with cream cheese frosting" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Red Velvet Dream</h4>
+            <p class="text-gray-600 mb-2">Smooth red velvet cake with cream cheese frosting.</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 200,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Red Velvet Dream" data-price="200000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Red Velvet Dream" data-price="185000">Add to Cart</button>
+            </div>
+          </div>
+           <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Vanilla Cake with Fresh Strawberry Frosting.jpeg" alt="Vanilla Buttercream Cake with colorful sprinkles" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Vanilla Celebration Cake</h4>
+            <p class="text-gray-600 mb-2">Classic vanilla cake with buttercream frosting and sprinkles.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 150,OOO</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Vanilla Celebration Cake" data-price="150000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Vanilla Celebration Cake" data-price="148000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/ebyanzi intro" alt="Red Velvet Cake with cream cheese frosting" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Ebyanzi introduction cakes</h4>
+            <p class="text-gray-600 mb-2">your smoothy and taste cake plus give aways</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 1,500,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 2,500,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Red Velvet Dream" data-price="2,500,000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Red Velvet Dream" data-price="185000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/lemon drizzle.jpg" alt="Lemon Drizzle Cake with citrus glaze" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Lemon Drizzle Cake</h4>
+            <p class="text-gray-600 mb-2">Zesty lemon cake with a tangy citrus glaze.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 155,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Lemon Drizzle Cake" data-price="155000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Lemon Drizzle Cake" data-price="155000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Carrot Cake with Cream Cheese Frosting.jpeg" alt="Carrot Cake with walnuts and cream cheese" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Carrot Spice Cake</h4>
+            <p class="text-gray-600 mb-2">Moist carrot cake with walnuts and cream cheese frosting.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 170,500</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Carrot Spice Cake" data-price="170500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Carrot Spice Cake" data-price="177500">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Strawberry Shortcake.jpeg" alt="Strawberry Shortcake with fresh strawberries" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Strawberry Shortcake</h4>
+            <p class="text-gray-600 mb-2">Light sponge cake with fresh strawberries and whipped cream.</p>
+            <span class="block text-sm text-gray-500">Starts at <strong>UGX 95,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 150,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Strawberry Shortcake" data-price="150000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Strawberry Shortcake" data-price="170000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Mocha Chocolate Sponge Cake - A Dreamy Treat for Coffee Lovers!.jpeg" alt="Coffee Mocha Cake with espresso frosting" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Coffee Mocha Cake</h4>
+            <p class="text-gray-600 mb-2">Rich coffee-flavored cake with espresso frosting.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 120,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 170,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Coffee Mocha Cake" data-price="163000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Coffee Mocha Cake" data-price="170000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Pineapple Coconut Dream Cake.jpeg" alt="Coconut Paradise Cake with shredded coconut" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Coconut Paradise Cake</h4>
+            <p class="text-gray-600 mb-2">Tropical coconut cake with creamy coconut frosting.</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom quote</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 175,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Coconut Paradise Cake" data-price="175000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Coconut Paradise Cake" data-price="174000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Blueberry Cake.jpeg" alt="Blueberry Delight Cake with blueberry compote" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Blueberry Delight Cake</h4>
+            <p class="text-gray-600 mb-2">Vanilla cake with blueberry compote and whipped cream.</p>
+                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 159,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Blueberry Delight Cake" data-price="159000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Blueberry Delight Cake" data-price="159000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Matcha Green Tea Cake.jpeg" alt="Matcha Green Tea Cake with white chocolate" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Matcha Green Tea Cake</h4>
+            <p class="text-gray-600 mb-2">Earthy matcha cake with white chocolate ganache.</p>
+               <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 181,000</p>
+                    
+          
+           
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Matcha Green Tea Cake" data-price="181000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Matcha Green Tea Cake" data-price="181000">Add to Cart</button>
+            
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/df3fa697-19fa-45e9-8f8c-01dbd159a5f8.jpeg" alt="Raspberry Chocolate Cake with ganache" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Raspberry Chocolate Cake</h4>
+            <p class="text-gray-600 mb-2">Chocolate cake with raspberry filling and ganache.</p>
+                         <span class="block text-sm text-gray-500">Starts at <strong>UGX 150,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 455,500</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Raspberry Chocolate Cake" data-price="455500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Raspberry Chocolate Cake" data-price="170000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Mango & Passionfruit Cake - 6 (14 Portions).jpeg" alt="Mango Passion Cake with tropical fruit" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Mango Passion Cake</h4>
+            <p class="text-gray-600 mb-2">Tropical mango cake with passion fruit frosting.</p>
+                    
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 140,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 220,500</p>  
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Mango Passion Cake" data-price="220500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Mango Passion Cake" data-price="166500">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/🍒 Black Forest Cake Recipe – Rich Chocolate Layers with Cherries & Cream! 🎂✨.jpeg" alt="Black Forest Cake with cherries" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Black Forest Cake</h4>
+            <p class="text-gray-600 mb-2">Chocolate cake with cherries and whipped cream.</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 150,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 207,500</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Black Forest Cake" data-price="177500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Black Forest Cake" data-price="177500">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Tiramisu.jpeg" alt="Tiramisu Cake with coffee and mascarpone" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Tiramisu Cake</h4>
+            <p class="text-gray-600 mb-2">Coffee-soaked cake with mascarpone cream.</p>
+                       
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 185,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Tiramisu Cake" data-price="185000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Tiramisu Cake" data-price="185000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Salted Caramel Cake.jpeg" alt="Salted Caramel Cake with toffee" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Salted Caramel Cake</h4>
+            <p class="text-gray-600 mb-2">Vanilla cake with salted caramel frosting and toffee bits.</p>
+                      
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 150,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+        
+            <p class="text-pink-600 font-bold">UGX 224,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Salted Caramel Cake" data-price="224000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Salted Caramel Cake" data-price="174000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Hazelnut Praline Cake" alt="Hazelnut Praline Cake with nutty crunch" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Hazelnut Praline Cake</h4>
+            <p class="text-gray-600 mb-2">Chocolate cake with hazelnut praline and creamy frosting.</p>
+                      
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 120,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 191,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Hazelnut Praline Cake" data-price="191000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Hazelnut Praline Cake" data-price="181000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Peanut Butter Chocolate Cake" alt="Peanut Butter Chocolate Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Peanut Butter Chocolate Cake</h4>
+            <p class="text-gray-600 mb-2">Chocolate cake with creamy peanut butter frosting.</p>
+                      
+            <span class="block text-sm text-gray-500">Starts at <strong>UGX 120,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            
+            <p class="text-pink-600 font-bold">UGX 195,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Peanut Butter Chocolate Cake" data-price="195000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Peanut Butter Chocolate Cake" data-price="170000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Oreo Cookie Cake" alt="Oreo Cookie Cake with cookie crumbs" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Oreo Cookie Cake</h4>
+            <p class="text-gray-600 mb-2">Chocolate cake with Oreo cookie crumbs and frosting.</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 150,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            
+            <p class="text-pink-600 font-bold">UGX 203,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Oreo Cookie Cake" data-price="203000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Oreo Cookie Cake" data-price="163000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Pineapple Upside-Down Cake" alt="Pineapple Upside-Down Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Pineapple Upside-Down Cake</h4>
+            <p class="text-gray-600 mb-2">Classic cake with caramelized pineapple and cherries.</p>
+              <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 165,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Pineapple Upside-Down Cake" data-price="155000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Pineapple Upside-Down Cake" data-price="155000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Banana Cream Cake" alt="Banana Cream Cake with banana slices" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Banana Cream Cake</h4>
+            <p class="text-gray-600 mb-2">Moist banana cake with creamy custard frosting.</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 179,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Banana Cream Cake" data-price="179000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Banana Cream Cake" data-price="159000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Pumpkin Spice Cake" alt="Pumpkin Spice Cake with cinnamon frosting" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Pumpkin Spice Cake</h4>
+            <p class="text-gray-600 mb-2">Seasonal pumpkin cake with cinnamon cream frosting.</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 166,500</p>
+          
+            
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Pumpkin Spice Cake" data-price="166500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Pumpkin Spice Cake" data-price="166500">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Funfetti Party Cake" alt="Funfetti Party Cake with sprinkles" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Funfetti Party Cake</h4>
+            <p class="text-gray-600 mb-2">Colorful vanilla cake with sprinkles and buttercream.</p>
+                         <span class="block text-sm text-gray-500">Starts at <strong>UGX 120,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+          
+          
+            <p class="text-pink-600 font-bold">UGX 182,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Funfetti Party Cake" data-price="182000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Funfetti Party Cake" data-price="152000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Key Lime Pie Cake" alt="Key Lime Pie Cake with lime zest" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Key Lime Pie Cake</h4>
+            <p class="text-gray-600 mb-2">Tangy lime cake with graham cracker crust and frosting.</p>
+                         <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+          
+          
+            <p class="text-pink-600 font-bold">UGX 170,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Key Lime Pie Cake" data-price="170000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Key Lime Pie Cake" data-price="170000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/S’mores Cake" alt="S’mores Cake with marshmallow and graham" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">S’mores Cake</h4>
+            <p class="text-gray-600 mb-2">Chocolate cake with marshmallow and graham cracker layers.</p>
+                       <span class="block text-sm text-gray-500">Starts at <strong>UGX 130,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+          
+          
+            <p class="text-pink-600 font-bold">UGX 190,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="S’mores Cake" data-price="190000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="S’mores Cake" data-price="180000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="PICS/Almond Amaretto Cake" alt="Almond Amaretto Cake with almond slices" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Almond Amaretto Cake</h4>
+            <p class="text-gray-600 mb-2">Almond cake with amaretto-infused frosting.</p>
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 135,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            
+          
+            <p class="text-pink-600 font-bold">UGX 1940,000</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Almond Amaretto Cake" data-price="194000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Almond Amaretto Cake" data-price="174000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Pistachio Rose Cake" alt="Pistachio Rose Cake with rosewater" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Pistachio Rose Cake</h4>
+            <p class="text-gray-600 mb-2">Pistachio cake with delicate rosewater frosting.</p>
+            <span class="block text-sm text-gray-500">Starts at <strong>UGX 140,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            
+            <p class="text-pink-600 font-bold">UGX 211,000</p>
+          
+        
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Pistachio Rose Cake" data-price="211000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Pistachio Rose Cake" data-price="181000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Chai Spice Cake" alt="Chai Spice Cake with cardamom frosting" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Chai Spice Cake</h4>
+            <p class="text-gray-600 mb-2">Spiced chai cake with cardamom-infused frosting.</p>
+           
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 150,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 250,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Chai Spice Cake" data-price="250000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Chai Spice Cake" data-price="170000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Mocha Hazelnut Cake" alt="Mocha Hazelnut Cake with coffee ganache" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Mocha Hazelnut Cake</h4>
+            <p class="text-gray-600 mb-2">Coffee cake with hazelnut crunch and mocha ganache.</p>
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 150,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+          
+            <p class="text-pink-600 font-bold">UGX 180,500</p>
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Mocha Hazelnut Cake" data-price="180500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Mocha Hazelnut Cake" data-price="177500">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/White Chocolate Raspberry Cake" alt="White Chocolate Raspberry Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">White Chocolate Raspberry Cake</h4>
+            <p class="text-gray-600 mb-2">White chocolate cake with raspberry filling.</p>
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 120,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+
+            <p class="text-pink-600 font-bold">UGX 194,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="White Chocolate Raspberry Cake" data-price="194000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="White Chocolate Raspberry Cake" data-price="">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Triple Chocolate Decadence" alt="Triple Chocolate Decadence Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Triple Chocolate Decadence</h4>
+            <p class="text-gray-600 mb-2">Three layers of chocolate with ganache and truffles.</p>
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 150,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 240,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Triple Chocolate Decadence" data-price="240000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Triple Chocolate Decadence" data-price="200000">Add to Cart</button>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <img src="pics/Lavender Honey Cake.jpg" alt="Lavender Honey Cake with floral notes" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h4 class="text-lg font-semibold text-gray-800">Lavender Honey Cake</h4>
+            <p class="text-gray-600 mb-2">Delicate lavender cake with honey-sweetened frosting.</p>
+             <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+<p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
+            <p class="text-pink-600 font-bold">UGX 170,000</p>
+          
+            <div class="mt-2 flex items-center space-x-2">
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Lavender Honey Cake" data-price="170000">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Lavender Honey Cake" data-price="170000">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Order Form -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Place Your Order</h3>
+        <div class="space-y-4">
+          <div id="cartItems" class="text-gray-600"></div>
+          <p id="cartTotal" class="text-pink-600 font-bold">Total: UGX 0</p>
+          <input id="customerName" type="text" placeholder="Your Name" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-pink-600">
+         <input id="WhatsAppNumber" type="number" placeholder="WhatsApp number" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-pink-600">
+          <input id="customerEmail" type="email" placeholder="Your Email" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-pink-600">
+          <textarea id="orderNotes" placeholder="Special Instructions (e.g., delivery date, customizations)" rows="4" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-pink-600"></textarea>
+          <p class="text-gray-600">
+            <i class="fab fa-whatsapp text-green-500 mr-2"></i>
+            <a href="https://wa.me/256740017213" class="text-pink-600 hover:text-pink-700">WhatsApp Ug: + (256) 740-017213</a>
+          </p>
+          <button id="submitOrder" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition">Submit Order</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Order Confirmation Modal -->
+  <div id="orderModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-30">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h3 class="text-xl font-bold text-gray-800 mb-4">Order Confirmation</h3>
+      <p id="orderSummary" class="text-gray-600"></p>
+      <button id="closeOrderModal" class="mt-4 text-gray-600 hover:text-gray-800">Close</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-md mt-6">
+    <div class="p-4 text-center text-gray-600 max-w-7xl mx-auto">
+      <p>© 2025 Shalom Cakes. All rights reserved. | Designed by TIM OLIVEZ</p>
+      <p class="mt-2">
+        <i class="fab fa-whatsapp text-green-500 mr-2"></i>
+        <a href="https://wa.me/256740017213" class="text-pink-600 hover:text-pink-700">WhatsApp Us: + (256) 740-017213</a>
+        <a href="https://wa.me/256701032700" class="text-pink-600 hover:text-pink-700">WhatsApp Us: + (256) 701-032700</a>
+        <a href="#" class="text-pink-600 hover:text-pink-700">Call Us: + (256) 761-250078</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const toggleNav = document.getElementById('toggleNav');
+    const navMenu = document.getElementById('navMenu');
+    toggleNav.addEventListener('click', () => {
+      navMenu.classList.toggle('nav-hidden');
+    });
+
+    // Cart functionality
+    let cart = [];
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const submitOrder = document.getElementById('submitOrder');
+    const orderModal = document.getElementById('orderModal');
+    const orderSummary = document.getElementById('orderSummary');
+    const closeOrderModal = document.getElementById('closeOrderModal');
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const product = button.getAttribute('data-product');
+        const price = parseFloat(button.getAttribute('data-price'));
+        const quantity = parseInt(button.previousElementSibling.value);
+        cart.push({ product, price, quantity });
+        updateCart();
+      });
+    });
+
+    function updateCart() {
+      cartItems.innerHTML = cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('<br>');
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      cartTotal.textContent = `Total: UGX ${Math.round(total).toLocaleString('en-UG')}`;
+    }
+
+    submitOrder.addEventListener('click', () => {
+      const name = document.getElementById('customerName').value;
+      const email = document.getElementById('customerEmail').value;
+      const notes = document.getElementById('orderNotes').value;
+      if (!name || !email || cart.length === 0) {
+        alert('Please fill in all fields and add items to the cart.');
+        return;
+      }
+      const orderDetails = `New Order from Shalom Cakes\n\nCustomer: ${name}\nEmail: ${email}\n\nItems:\n${cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('\n')}\n\nTotal: UGX ${Math.round(cart.reduce((sum, item) => sum + item.price * item.quantity, 0)).toLocaleString('en-UG')}\n\nNotes: ${notes || 'None'}`;
+      orderSummary.innerHTML = `Thank you, ${name}! Your order has been placed.<br><br>Items:<br>${cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('<br>')}<br><br>Notes: ${notes || 'None'}<br>Email: ${email}`;
+      
+      // WhatsApp submission
+      const whatsappMessage = encodeURIComponent(orderDetails);
+      window.open(`https://wa.me/15559876543?text=${whatsappMessage}`, '_blank');
+      
+      // Email submission
+      const emailSubject = encodeURIComponent('New Order from Shalom Cakes');
+      const emailBody = encodeURIComponent(orderDetails);
+      window.location.href = `mailto:admin@shalomcakes.com?subject=${emailSubject}&body=${emailBody}`;
+      
+      orderModal.classList.remove('hidden');
+      cart = [];
+      updateCart();
+      document.getElementById('customerName').value = '';
+      document.getElementById('customerEmail').value = '';
+      document.getElementById('orderNotes').value = '';
+    });
+
+    closeOrderModal.addEventListener('click', () => {
+      orderModal.classList.add('hidden');
+    });
+  </script>
+  <script>
+  const searchBar = document.getElementById("searchBar");
+  const allProducts = document.querySelectorAll(".cartItems .bg-white");
+
+  searchBar.addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+
+    allProducts.forEach(product => {
+      const textContent = product.textContent.toLowerCase();
+      product.style.display = textContent.includes(searchTerm) ? "block" : "none";
+    });
+  });
+</script>
+
+</body>
+</html>

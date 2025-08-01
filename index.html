@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shalom Cakes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans" onload="launchConfetti()">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="flex items-center justify-between p-4 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-4">
+        <img src="pics/logo3.png" alt="Shalom Cakes Logo" class="h-12 w-auto" onerror="this.style.display='none';">
+        <h1 class="text-2xl font-bold text-pink-600">SHALOM CAKES</h1>
+      </div>
+      <button id="toggleNav" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+      <nav id="navMenu" class="hidden md:flex md:space-x-6">
+        <a href="index.html" class="text-pink-600 font-bold">Home</a>
+        <a href="products.html" class="hover:text-pink-600">Products</a>
+        <a href="about.html" class="hover:text-pink-600">About</a>
+        <a href="services.html" class="hover:text-pink-600">Services</a>
+        <a href="testimonials.html" class="hover:text-pink-600">Testimonials</a>
+        <a href="contact.html" class="hover:text-pink-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  
+    <section class="relative min-h-[80vh] w-full flex items-center justify-center text-center overflow-hidden">
+  <!-- Background Slideshow Container -->
+  <div id="heroBackground" class="absolute inset-0 w-full h-full z-0">
+    <div class="relative w-full h-full">
+      <img src="pics/hero1.jpg" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000">
+      <img src="pics/hero2.jpg" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000">
+      <img src="pics/hero3.jpg" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000">
+    <img src="pics/hero4.jpg" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000">     
+      <img src="pics/hero5.jpg" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000">
+      <img src="pics/hero6.jpg" class="absolute inset-0 w-full  h-full object-cover object-center opacity-0 transition-opacity duration-1000">
+      <img src="pics/hero7.jpg" class="absolute inset-0 w-full        h-full object-cover object-center opacity-0 transition-opacity duration-1000">        
+      <img src="pics/hero8.jpg" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000">
+      <img src="pics/hero9.jpg" class="absolute inset-0 w-full                             h-full object-cover object-center opacity-0 transition-opacity duration-1000">
+    </div>
+  </div>
+
+  <!-- Overlay Content -->
+  <div class="relative z-10 bg-black bg-opacity-50 backdrop-blur-sm p-8 rounded-xl shadow-xl max-w-2xl">
+    <h1 class="text-5xl font-extrabold text-white mb-4">Welcome to Shalom Cakes</h1>
+    <h2 class="text-2xl font-semibold text-pink-300 uppercase mb-4 tracking-wide">Taste of Nature</h2>
+    <p class="text-lg text-gray-100 mb-6">Delicious cakes crafted with love for every celebration.</p>
+    <a href="products.html" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full shadow-lg transition">Shop Now</a>
+  </div>
+</section>
+
+<!-- Featured Cakes -->
+<section class="p-6 max-w-7xl mx-auto">
+  <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Featured Cakes</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Repeat card for each cake -->
+    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/chocolate 3.jpeg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Chocolate Bliss Cake</h4>
+      <p class="text-gray-600 mb-2">Rich chocolate cake with creamy ganache and berries.</p>
+      <p class="text-pink-600 font-bold">UGX 120,000</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/bdcake.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Birthday cakes</h4>
+      <p class="text-gray-600 mb-2">Rich creamy chocolate cake.</p>
+    <p class="text-pink-600 font-bold">All at affordable prices</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/wed.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">wedding cakes</h4>
+      <p class="text-gray-600 mb-2">All kinds of wedding cakes</p>
+      <p class="text-pink-600 font-bold">All at affordable prices</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/baby.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Baby shower cakes</h4>
+      <p class="text-gray-600 mb-2">All kinds of baby shower cakes for both genders.</p>
+    <p class="text-pink-600 font-bold">All at affordable prices</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/surprise.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Surprise your favorites</h4>
+      <p class="text-gray-600 mb-2">All kinds of flavors</p>
+    <p class="text-pink-600 font-bold">All at affordable prices</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/weddd.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Wedding cakes</h4>
+      <p class="text-gray-600 mb-2">All flavors and designs of your choices.</p>
+    <p class="text-pink-600 font-bold">All at affordable prices</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/wed flower.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Wedding flowers</h4>
+      <p class="text-gray-600 mb-2">All colors and designs.</p>
+      <p class="text-pink-600 font-bold">All at affordable prices</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/money.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Money bouquet</h4>
+      <p class="text-gray-600 mb-2">All kinds of currencies</p>
+      <p class="text-pink-600 font-bold">At all costs</p>
+    </div>
+     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+      <img src="pics/celb.jpg" alt="Chocolate Bliss Cake" class="w-full h-48 object-cover rounded-t-lg mb-4">
+      <h4 class="text-lg font-semibold text-gray-800">Celebration cakes</h4>
+      <p class="text-gray-600 mb-2">All flavors</p>
+      <p class="text-pink-600 font-bold">All at affordable prices</p>
+    </div>
+    <!-- Add additional cakes similarly -->
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="bg-pink-50 py-12">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold text-pink-700 mb-4">About Shalom Cakes</h3>
+    <p class="text-gray-700 text-lg">At Shalom Cakes, we believe that every bite should tell a story. With years of experience and a passion for baking, we craft handmade cakes with natural ingredients and artistic designs. Whether it's a birthday, wedding, or casual treat — we bring sweetness to your table.</p>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-xl transition">
+        <i class="fas fa-birthday-cake text-pink-600 text-4xl mb-4"></i>
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Birthday Cakes</h4>
+        <p class="text-gray-600">Celebrate life’s milestones with custom-designed cakes full of flavor.</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-xl transition">
+        <i class="fas fa-heart text-pink-600 text-4xl mb-4"></i>
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Wedding Cakes</h4>
+        <p class="text-gray-600">Elegant multi-tiered cakes handcrafted for your perfect day.</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-xl transition">
+        <i class="fas fa-gift text-pink-600 text-4xl mb-4"></i>
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Custom Orders</h4>
+        <p class="text-gray-600">Design a one-of-a-kind cake that fits your theme, taste, and creativity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-4 right-4 bg-green-500 text-white py-2 px-4 rounded shadow-lg hidden z-50">You've subscribed successfully!</div>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/256740017213" target="_blank" class="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition">
+  <i class="fab fa-whatsapp text-2xl"></i>
+</a>
+
+<!-- Footer -->
+<footer class="bg-white shadow-md mt-6">
+  <div class="p-6 text-center text-gray-600 max-w-7xl mx-auto">
+    <p>© 2025 Shalom Cakes. All rights reserved. | Designed by Tim Olivez</p>
+    <p class="mt-2">
+      <a href="https://wa.me/256740017213" class="text-pink-600 hover:text-pink-700">
+        <i class="fab fa-whatsapp mr-2 text-green-500"></i>WhatsApp: +256 740 017213
+      </a>
+    </p>
+  </div>
+</footer>
+<script>
+  // Navigation Toggle
+  document.getElementById('toggleNav').addEventListener('click', () => {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('hidden');
+  });
+
+  // Slideshow Logic
+  const pics = document.querySelectorAll("#heroBackground img");
+  let index = 0;
+  function showSlide(i) {
+    pics.forEach((img, idx) => {
+      img.classList.remove("opacity-100");
+      img.classList.add("opacity-0");
+    });
+    pics[i].classList.remove("opacity-0");
+    pics[i].classList.add("opacity-100");
+  }
+  function cycleSlides() {
+    showSlide(index);
+    index = (index + 1) % pics.length;
+  }
+  setInterval(cycleSlides, 4000);
+  cycleSlides();
+
+  // Confetti on load
+  function launchConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }
+
+  // Newsletter Toast
+  function subscribe(event) {
+    event.preventDefault();
+    const toast = document.getElementById('toast');
+    toast.classList.remove('hidden');
+    setTimeout(() => toast.classList.add('hidden'), 3000);
+    document.getElementById('emailField').value = '';
+  }
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Quote - Shalom Cakes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<script>
+  function redirectToProducts(event) {
+    event.preventDefault();
+
+    const name = encodeURIComponent(document.getElementById('name').value);
+    const email = encodeURIComponent(document.getElementById('email').value);
+    const cakeType = encodeURIComponent(document.getElementById('cakeType').value);
+    const details = encodeURIComponent(document.getElementById('details').value);
+    const budget = encodeURIComponent(document.getElementById('budget').value);
+
+    // Redirect to products.html with all inputs as query parameters
+    const query = `?name=${name}&email=${email}&cakeType=${cakeType}&details=${details}&budget=${budget}`;
+    window.location.href = `products.html${query}`;
+  }
+</script>
+
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="flex items-center justify-between p-4 max-w-7xl mx-auto">
+      <h1 class="text-2xl font-bold text-pink-600">Shalom Cakes</h1>
+      <nav class="flex space-x-4 text-gray-600">
+        <a href="index.html" class="hover:text-pink-600">Home</a>
+        <a href="products.html" class="hover:text-pink-600">Products</a>
+        <a href="services.html" class="hover:text-pink-600">Services</a>
+        <a href="contact.html" class="hover:text-pink-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <form id="quoteForm" onsubmit="redirectToProducts(event)" class="bg-white p-6 rounded-lg shadow-md space-y-6">
+  <div>
+    <label for="name" class="block text-gray-700 font-semibold mb-2">Your Name</label>
+    <input type="text" id="name" name="name" required class="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-pink-600">
+  </div>
+<div>
+    <label for="number" class="block text-gray-700 font-semibold mb-2">whatsapp Number</label>
+    <input type="number" id="whatsappnumber" name="WhatsApp Number" required class="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-pink-600">
+  </div>
+  <div>
+    <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+    <input type="email" id="email" name="email" required class="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-pink-600">
+  </div>
+
+  <div>
+    <label for="cakeType" class="block text-gray-700 font-semibold mb-2">Type of Cake</label>
+    <select id="cakeType" name="cakeType" required class="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-pink-600">
+      <option value="">Select an option</option>
+      <option>Wedding Cake</option>
+      <option>Birthday Cake</option>
+      <option>Anniversary Cake</option>
+      <option>Graduation Cake</option>  
+      <option>Baby Shower Cake</option>
+      <option>celebrations💖 Cake</option>
+      <option>Corporate Event Cake</option>
+      <option>Special Occasion Cake</option>
+      <option>Corporate Cake</option>
+      <option>Premier Package</option>
+      <option>Custom Design</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="details" class="block text-gray-700 font-semibold mb-2">Design/Flavor Preferences</label>
+    <textarea id="details" name="details" rows="4" placeholder="e.g. Chocolate ganache, three tiers, gold trim..." class="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-pink-600"></textarea>
+  </div>
+
+  <div>
+    <label for="budget" class="block text-gray-700 font-semibold mb-2">Budget Estimate (UGX)</label>
+    <input type="number" id="budget" name="budget" placeholder="e.g. 150000" class="w-full border border-gray-300 px-4 py-2 rounded focus:ring-2 focus:ring-pink-600">
+  </div>
+
+  <button type="submit" class="w-full bg-pink-600 text-white font-semibold py-2 rounded hover:bg-pink-700 transition">
+    Submit Quote Request
+  </button>
+</form>
+<div id="toast" class="fixed top-6 right-6 bg-pink-600 text-white px-4 py-2 rounded-lg shadow-md opacity-0 transition duration-500 ease-in-out z-50">
+  🎉 Quote request sent! We'll be in touch soon.
+</div>
+
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-md mt-12">
+    <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-600">
+      <div>
+        <h4 class="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <i class="fas fa-store text-pink-600"></i> Shalom Cakes
+        </h4>
+        <p>Celebrating life’s moments with custom cakes and premium pastry experiences.</p>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <i class="fas fa-link text-pink-600"></i> Quick Links
+        </h4>
+        <ul class="space-y-1 text-sm">
+          <li><a href="products.html" class="hover:text-pink-600">Products</a></li>
+          <li><a href="services.html" class="hover:text-pink-600">Services</a></li>
+          <li><a href="contact.html" class="hover:text-pink-600">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+          <i class="fas fa-gift text-pink-600"></i> Premier Packages
+        </h4>
+        <p>Luxury bundles with custom packaging and priority delivery. Perfect for gifting and high-end events.</p>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-4">
+      © 2025 Shalom Cakes. All rights reserved. Designed by Waliggo
+    </div>
+  </footer>
+
+
+  <script>
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.remove('opacity-0');
+    toast.classList.add('opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0');
+    }, 4000);
+  }
+
+  function redirectToProducts(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const whatsapp = document.getElementById('whatsappnumber').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const cakeType = document.getElementById('cakeType').value;
+    const details = document.getElementById('details').value.trim();
+    const budget = document.getElementById('budget').value.trim();
+
+    if (!name || !whatsapp || !email || !cakeType) {
+      alert("⚠️ Please fill in all required fields.");
+      return;
+    }
+
+    const fullMessage = `🎂 Quote Request\nName: ${name}\nWhatsApp: ${whatsapp}\nEmail: ${email}\nCake Type: ${cakeType}\nPreferences: ${details}\nBudget: UGX ${budget}`;
+
+    const bakeryWhatsApp = "256740017213";
+    const bakeryEmail = "contact@shalomcakes.com";
+
+    const whatsappURL = `https://wa.me/${bakeryWhatsApp}?text=${encodeURIComponent(fullMessage)}`;
+    const emailURL = `mailto:${bakeryEmail}?subject=Cake Quote Request&body=${encodeURIComponent(fullMessage)}`;
+
+    const sendViaWhatsApp = confirm("Would you like to send your quote request via WhatsApp?\nClick OK for WhatsApp or Cancel for Email.");
+
+    if (sendViaWhatsApp) {
+      window.open(whatsappURL, "_blank");
+      showToast("🎂 WhatsApp message opened successfully!");
+    } else {
+      window.location.href = emailURL;
+      showToast("📧 Email draft opened successfully!");
+    }
+
+    document.getElementById('quoteForm').reset();
+  }
+</script>
+<!-- Confetti JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+  function launchConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#F472B6', '#FDBA74', '#A5B4FC', '#34D399']
+    });
+  }
+
+  function redirectToProducts(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const whatsapp = document.getElementById('whatsappnumber').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const cakeType = document.getElementById('cakeType').value;
+    const details = document.getElementById('details').value.trim();
+    const budget = document.getElementById('budget').value.trim();
+
+    if (!name || !whatsapp || !email || !cakeType) {
+      alert("⚠️ Please fill in all required fields.");
+      return;
+    }
+
+    const fullMessage = `🎂 Quote Request\nName: ${name}\nWhatsApp: ${whatsapp}\nEmail: ${email}\nCake Type: ${cakeType}\nPreferences: ${details}\nBudget: UGX ${budget}`;
+
+    const bakeryWhatsApp = "256740017213";
+    const bakeryEmail = "contact@shalomcakes.com";
+
+    const whatsappURL = `https://wa.me/${bakeryWhatsApp}?text=${encodeURIComponent(fullMessage)}`;
+    const emailURL = `mailto:${bakeryEmail}?subject=Cake Quote Request&body=${encodeURIComponent(fullMessage)}`;
+
+    const sendViaWhatsApp = confirm("Would you like to send your quote request via WhatsApp?\nClick OK for WhatsApp or Cancel for Email.");
+
+    if (sendViaWhatsApp) {
+      window.open(whatsappURL, "_blank");
+      showToast("🎂 WhatsApp message opened successfully!");
+    } else {
+      window.location.href = emailURL;
+      showToast("📧 Email draft opened successfully!");
+    }
+
+    launchConfetti(); // 🎊✨ Add the fun!
+    document.getElementById('quoteForm').reset();
+  }
+</script>
+
+<a href="https://wa.me/256740017213" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg flex items-center space-x-2 transition-all duration-300 z-50">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path d="M16.862 13.387a9.5 9.5 0 11-4.66-4.62l.17.11 2.36-1.12a1.38 1.38 0 011.86.58l.98 1.86a1.4 1.4 0 01-.58 1.86l-2.27 1.09z" />
+  </svg>
+  <span class="font-semibold">Chat</span>
+</a>
+
+</body>
+</html>

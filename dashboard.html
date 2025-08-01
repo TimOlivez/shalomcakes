@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Shalom Cakes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .sidebar {
+      transition: transform 0.3s ease-in-out;
+    }
+    .sidebar-hidden {
+      transform: translateX(-100%);
+    }
+    @media (min-width: 768px) {
+      .sidebar-hidden {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="flex items-center justify-between p-4 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-4">
+        <button id="toggleSidebar" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+        <h1 class="text-2xl font-bold text-pink-600">Shalom Cakes</h1>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span id="userDisplay" class="text-gray-600">Guest</span>
+        <button id="loginButton" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition">Login</button>
+        <button id="logoutButton" class="hidden bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="bg-gray-800 text-white w-64 p-6 sidebar sidebar-hidden fixed inset-y-0 md:static md:sidebar-hidden z-20">
+      <nav>
+        <ul id="navLinks" class="space-y-2">
+          <li class="customer-only">
+            <a href="products.html" class="flex items-center space-x-2 p-2 rounded hover:bg-gray-700">
+              <i class="fas fa-cookie-bite"></i>
+              <span>Our Products</span>
+            </a>
+          </li>
+          <li class="admin-only hidden">
+            <a href="dashboard.html" class="flex items-center space-x-2 p-2 rounded bg-gray-700">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="flex items-center space-x-2 p-2 rounded hover:bg-gray-700">
+              <i class="fas fa-info-circle"></i>
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="services.html" class="flex items-center space-x-2 p-2 rounded hover:bg-gray-700">
+              <i class="fas fa-cake-candles"></i>
+              <span>Our Services</span>
+            </a>
+          </li>
+          <li>
+            <a href="testimonials.html" class="flex items-center space-x-2 p-2 rounded hover:bg-gray-700">
+              <i class="fas fa-star"></i>
+              <span>Testimonials</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="flex items-center space-x-2 p-2 rounded hover:bg-gray-700">
+              <i class="fas fa-envelope"></i>
+              <span>Contact Us</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Admin Dashboard</h2>
+      
+      <!-- Dashboard Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Inventory Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-box-open text-3xl text-pink-600"></i>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Inventory</h3>
+              <p class="text-gray-600">Manage stock levels and products</p>
+              <a href="#inventory" class="text-pink-600 hover:text-pink-700 mt-2 inline-block">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Orders Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-shopping-cart text-3xl text-pink-600"></i>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Orders</h3>
+              <p class="text-gray-600">Track and process customer orders</p>
+              <a href="#orders" class="text-pink-600 hover:text-pink-700 mt-2 inline-block">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Messages Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+          <div class="flex items-center space-x-4">
+            <i class="fas fa-envelope text-3xl text-pink-600"></i>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Messages</h3>
+              <p class="text-gray-600">Respond to customer inquiries</p>
+              <a href="#messages" class="text-pink-600 hover:text-pink-700 mt-2 inline-block">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Section -->
+      <div class="mt-8">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Customer Testimonials</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-600 italic">"Shalom Cakes made our wedding cake, and it was absolutely stunning! The flavors were incredible, and our guests couldn’t stop raving about it."</p>
+            <p class="text-gray-800 font-semibold mt-2">– Sarah M.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-600 italic">"The cupcakes for our office party were a hit! Perfectly baked and beautifully decorated. Thank you, Shalom Cakes!"</p>
+            <p class="text-gray-800 font-semibold mt-2">– James T.</p>
+          </div>
+        </div>
+        <a href="testimonials.html" class="text-pink-600 hover:text-pink-700 mt-4 inline-block">View More Testimonials</a>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-md mt-6">
+    <div class="p-4 text-center text-gray-600 max-w-7xl mx-auto">
+      <p>© 2025 Shalom Cakes. All rights reserved. | Designed by Tim Olivez</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="login.js"></script>
+  <script>
+    const toggleSidebar = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
+    toggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar-hidden');
+    });
+  </script>
+</body>
+</html>
