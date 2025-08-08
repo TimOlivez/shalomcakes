@@ -39,6 +39,32 @@
     <button id="cartButton" class="relative bg-pink-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-700 transition ml-4">
       🛒 Cart (<span id="cart-count">0</span>)
     </button>
+  <style>
+    /* Floating cart button styles */
+    #cartButton.floating-cart {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 50;
+      margin-left: 0;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+    #cartButton.floating-cart.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    @media (max-width: 640px) {
+      #cartButton.floating-cart {
+        right: 16px;
+        bottom: 16px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
   </div>
 </header>
 
@@ -589,17 +615,18 @@
     const cartCount = document.getElementById('cart-count');
     const cartButton = document.getElementById('cartButton');
 
-    // Add to cart when button is clicked
+    // Add to cart when button is clicked (increment quantity if already in cart)
     addToCartButtons.forEach(button => {
       button.addEventListener('click', () => {
         const product = button.getAttribute('data-product');
         const price = parseFloat(button.getAttribute('data-price').replace(/,/g, ''));
         const quantity = parseInt(button.previousElementSibling.value);
-        addOrUpdateCart(product, price, quantity);
+        addOrIncrementCart(product, price, quantity);
+        showFloatingCart();
       });
     });
 
-    // Add to cart automatically when quantity changes
+    // Add to cart automatically when quantity changes (set quantity directly)
     quantityInputs.forEach(input => {
       input.addEventListener('change', () => {
         const product = input.getAttribute('data-product');
@@ -607,10 +634,31 @@
         const quantity = parseInt(input.value);
         if (quantity > 0) {
           addOrUpdateCart(product, price, quantity);
+          showFloatingCart();
         }
       });
     });
 
+    // Show floating cart button as long as there are items in the cart
+    function showFloatingCart() {
+      cartButton.classList.add('floating-cart');
+      cartButton.classList.remove('hide');
+    }
+
+
+    // Add or increment quantity in cart (for button click)
+    function addOrIncrementCart(product, price, quantity) {
+      const index = cart.findIndex(item => item.product === product);
+      if (index > -1) {
+        cart[index].quantity += quantity;
+        cart[index].price = price;
+      } else {
+        cart.push({ product, price, quantity });
+      }
+      updateCart();
+    }
+
+    // Set quantity in cart (for quantity input change)
     function addOrUpdateCart(product, price, quantity) {
       const index = cart.findIndex(item => item.product === product);
       if (index > -1) {
@@ -624,12 +672,38 @@
 
     function updateCart() {
       cart = cart.filter(item => item.quantity > 0); // Remove zero-quantity items
-      cartItems.innerHTML = cart.length
-        ? cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('<br>')
-        : '<span class="text-gray-400">No items in cart.</span>';
+      if (cart.length) {
+        cartItems.innerHTML = cart.map((item, idx) =>
+          `<span>${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}</span> ` +
+          `<button class="remove-cart-item text-red-500 ml-2" data-index="${idx}" title="Remove"><i class="fas fa-trash"></i></button>`
+        ).join('<br>');
+      } else {
+        cartItems.innerHTML = '<span class="text-gray-400">No items in cart.</span>';
+      }
       const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
       cartTotal.textContent = `Total: UGX ${Math.round(total).toLocaleString('en-UG')}`;
       cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+      // Show or hide floating cart button based on cart contents
+      if (cart.length > 0) {
+        cartButton.classList.add('floating-cart');
+        cartButton.classList.remove('hide');
+      } else {
+        cartButton.classList.remove('floating-cart');
+        cartButton.classList.add('hide');
+      }
+
+      // Add event listeners for remove buttons (decrease quantity by 1, remove if zero)
+      document.querySelectorAll('.remove-cart-item').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const idx = parseInt(this.getAttribute('data-index'));
+          if (cart[idx].quantity > 1) {
+            cart[idx].quantity -= 1;
+          } else {
+            cart.splice(idx, 1);
+          }
+          updateCart();
+        });
+      });
     }
 
     submitOrder.addEventListener('click', () => {
@@ -656,6 +730,9 @@
       orderModal.classList.remove('hidden');
       cart = [];
       updateCart();
+      // Hide the floating cart button after order is submitted
+      cartButton.classList.remove('floating-cart');
+      cartButton.classList.add('hide');
       document.getElementById('customerName').value = '';
       document.getElementById('customerEmail').value = '';
       document.getElementById('WhatsAppNumber').value = '';
@@ -669,6 +746,7 @@
     // Show cart section when cart button is clicked (scroll to order form)
     cartButton.addEventListener('click', () => {
       document.getElementById('cartItems').scrollIntoView({ behavior: 'smooth' });
+      // Do not hide the floating cart button on click anymore
     });
 
     // Initial cart update
