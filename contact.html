@@ -29,12 +29,12 @@
         <i class="fas fa-bars text-xl"></i>
       </button>
       <nav id="navMenu" class="nav-hidden flex-col md:flex md:flex-row md:space-x-4 absolute md:static top-16 left-0 right-0 bg-white md:bg-transparent p-4 md:p-0 z-10">
-        <a href="index.html" class="text-pink-600 font-bold p-2">Home</a>
+        <a href="index.html" class="text-gray-600 hover:text-pink-600 p-2">Home</a>
         <a href="products.html" class="text-gray-600 hover:text-pink-600 p-2">Products</a>
         <a href="about.html" class="text-gray-600 hover:text-pink-600 p-2">About</a>
         <a href="services.html" class="text-gray-600 hover:text-pink-600 p-2">Services</a>
         <a href="testimonials.html" class="text-gray-600 hover:text-pink-600 p-2">Testimonials</a>
-        <a href="contact.html" class="text-gray-600 hover:text-pink-600 p-2">Contact</a>
+        <a href="contact.html" class="text-pink-600 font-bold p-2">Contact</a>
       </nav>
     </div>
   </header>
@@ -116,7 +116,7 @@
       <p class="mb-2">✅ <strong>${name}</strong>, your message is ready to send.</p>
       <p class="mb-2">Choose a method:</p>
       <div class="space-y-2 mt-3">
-        <a href="https://wa.me/256740017213" target="_blank" class="inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">📱 WhatsApp</a>
+        <a href="${whatsappURL}" target="_blank" class="inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">📱 WhatsApp</a>
         <a href="${emailURL}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">✉️ Email</a>
       </div>
     `;
@@ -136,9 +136,7 @@
 </script>
 
 
-<a href="https://wa.me/256740017213" target="_blank" class="fixed bottom-5 left-5 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 z-40">
-  <i class="fab fa-whatsapp text-xl"></i>
-</a>
+
 
 
   <script>
