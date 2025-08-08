@@ -10,6 +10,7 @@
     .nav-hidden {
       display: none;
     }
+    /* No extra code here; style block ends cleanly */
     @media (min-width: 768px) {
       .nav-hidden {
         display: flex;
@@ -604,6 +605,14 @@
 
     // Cart functionality
     let cart = [];
+    // Load cart from localStorage if available
+    if (localStorage.getItem('shalomCart')) {
+      try {
+        cart = JSON.parse(localStorage.getItem('shalomCart')) || [];
+      } catch (e) {
+        cart = [];
+      }
+    }
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -670,8 +679,11 @@
       updateCart();
     }
 
+    // Update cart display and persist to localStorage
     function updateCart() {
       cart = cart.filter(item => item.quantity > 0); // Remove zero-quantity items
+      // Save cart to localStorage
+      localStorage.setItem('shalomCart', JSON.stringify(cart));
       if (cart.length) {
         cartItems.innerHTML = cart.map((item, idx) =>
           `<span>${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}</span> ` +
@@ -730,6 +742,8 @@
       orderModal.classList.remove('hidden');
       cart = [];
       updateCart();
+      // Clear cart from localStorage after order is submitted
+      localStorage.removeItem('shalomCart');
       // Hide the floating cart button after order is submitted
       cartButton.classList.remove('floating-cart');
       cartButton.classList.add('hide');
@@ -751,8 +765,9 @@
 
     // Initial cart update
     updateCart();
-  </script>
 
+    
+  </script>
 
 </body>
 </html>
