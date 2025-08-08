@@ -20,24 +20,27 @@
 <body class="bg-gray-100 font-sans">
   <!-- Header -->
   <header class="bg-white shadow-md">
-    <div class="flex items-center justify-between p-4 max-w-7xl mx-auto">
-      <div class="flex items-center space-x-4">
-        <img src="logo.png" alt="Shalom Cakes Logo" class="h-12 w-auto" onerror="this.style.display='none';">
-        <h1 class="text-2xl font-bold text-pink-600">Shalom Cakes</h1>
-      </div>
-      <button id="toggleNav" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
-        <i class="fas fa-bars text-xl"></i>
-      </button>
-      <nav id="navMenu" class="nav-hidden flex-col md:flex md:flex-row md:space-x-4 absolute md:static top-16 left-0 right-0 bg-white md:bg-transparent p-4 md:p-0 z-10">
-        <a href="index.html" class="text-gray-600 hover:text-pink-600 p-2">Home</a>
-        <a href="products.html" class="text-pink-600 font-bold p-2">Products</a>
-        <a href="about.html" class="text-gray-600 hover:text-pink-600 p-2">About</a>
-        <a href="services.html" class="text-gray-600 hover:text-pink-600 p-2">Services</a>
-        <a href="testimonials.html" class="text-gray-600 hover:text-pink-600 p-2">Testimonials</a>
-        <a href="contact.html" class="text-gray-600 hover:text-pink-600 p-2">Contact</a>
-      </nav>
+  <div class="flex items-center justify-between p-4 max-w-7xl mx-auto">
+    <div class="flex items-center space-x-4">
+      <img src="logo.png" alt="Shalom Cakes Logo" class="h-12 w-auto" onerror="this.style.display='none';">
+      <h1 class="text-2xl font-bold text-pink-600">Shalom Cakes</h1>
     </div>
-  </header>
+    <button id="toggleNav" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+    <nav id="navMenu" class="nav-hidden flex-col md:flex md:flex-row md:space-x-4 absolute md:static top-16 left-0 right-0 bg-white md:bg-transparent p-4 md:p-0 z-10">
+      <a href="index.html" class="text-gray-600 hover:text-pink-600 p-2">Home</a>
+      <a href="products.html" class="text-pink-600 font-bold p-2">Products</a>
+      <a href="about.html" class="text-gray-600 hover:text-pink-600 p-2">About</a>
+      <a href="services.html" class="text-gray-600 hover:text-pink-600 p-2">Services</a>
+      <a href="testimonials.html" class="text-gray-600 hover:text-pink-600 p-2">Testimonials</a>
+      <a href="contact.html" class="text-gray-600 hover:text-pink-600 p-2">Contact</a>
+    </nav>
+    <button id="cartButton" class="relative bg-pink-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-700 transition ml-4">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </button>
+  </div>
+</header>
 
   <!-- Main Content -->
   <main class="p-6 max-w-7xl mx-auto">
@@ -53,13 +56,12 @@
             <img src="pics/chocolate 3.jpeg" alt="Chocolate Layer Cake with ganache and berries" class="w-full h-48 object-cover rounded-t-lg mb-4">
             <h4 class="text-lg font-semibold text-gray-800">Chocolate Bliss Cake</h4>
             <p class="text-gray-600 mb-2">Rich chocolate cake with creamy ganache and fresh berries.</p>
-                        <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
+            <span class="block text-sm text-gray-500">Starts at <strong>UGX 100,000</strong></span>
             <p class="text-xs text-gray-400 mt-1">Need something special? <a href="quote.html" class="text-pink-600 hover:underline">Request a custom price</a></p>
-
             <p class="text-pink-600 font-bold">UGX 150,500</p>
             <div class="mt-2 flex items-center space-x-2">
-              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Chocolate Bliss Cake" data-price="100500">
-              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Chocolate Bliss Cake" data-price="166500">Add to Cart</button>
+              <input type="number" min="1" value="1" class="w-16 p-1 border rounded" data-product="Chocolate Bliss Cake" data-price="150500">
+              <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition" data-product="Chocolate Bliss Cake" data-price="150500">Add to Cart</button>
             </div>
           </div>
  <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
@@ -568,6 +570,7 @@
   </footer>
 
   <!-- JavaScript -->
+
   <script>
     const toggleNav = document.getElementById('toggleNav');
     const navMenu = document.getElementById('navMenu');
@@ -580,73 +583,100 @@
     const cartItems = document.getElementById('cartItems');
     const cartTotal = document.getElementById('cartTotal');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const quantityInputs = document.querySelectorAll('input[type="number"][data-product]');
     const submitOrder = document.getElementById('submitOrder');
     const orderModal = document.getElementById('orderModal');
     const orderSummary = document.getElementById('orderSummary');
     const closeOrderModal = document.getElementById('closeOrderModal');
+    const cartCount = document.getElementById('cart-count');
+    const cartButton = document.getElementById('cartButton');
 
+    // Add to cart when button is clicked
     addToCartButtons.forEach(button => {
       button.addEventListener('click', () => {
         const product = button.getAttribute('data-product');
-        const price = parseFloat(button.getAttribute('data-price'));
+        const price = parseFloat(button.getAttribute('data-price').replace(/,/g, ''));
         const quantity = parseInt(button.previousElementSibling.value);
-        cart.push({ product, price, quantity });
-        updateCart();
+        addOrUpdateCart(product, price, quantity);
       });
     });
 
+    // Add to cart automatically when quantity changes
+    quantityInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        const product = input.getAttribute('data-product');
+        const price = parseFloat(input.getAttribute('data-price').replace(/,/g, ''));
+        const quantity = parseInt(input.value);
+        if (quantity > 0) {
+          addOrUpdateCart(product, price, quantity);
+        }
+      });
+    });
+
+    function addOrUpdateCart(product, price, quantity) {
+      const index = cart.findIndex(item => item.product === product);
+      if (index > -1) {
+        cart[index].quantity = quantity;
+        cart[index].price = price;
+      } else {
+        cart.push({ product, price, quantity });
+      }
+      updateCart();
+    }
+
     function updateCart() {
-      cartItems.innerHTML = cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('<br>');
+      cart = cart.filter(item => item.quantity > 0); // Remove zero-quantity items
+      cartItems.innerHTML = cart.length
+        ? cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('<br>')
+        : '<span class="text-gray-400">No items in cart.</span>';
       const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
       cartTotal.textContent = `Total: UGX ${Math.round(total).toLocaleString('en-UG')}`;
+      cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
     }
 
     submitOrder.addEventListener('click', () => {
       const name = document.getElementById('customerName').value;
       const email = document.getElementById('customerEmail').value;
       const notes = document.getElementById('orderNotes').value;
-      if (!name || !email || cart.length === 0) {
+      const whatsapp = document.getElementById('WhatsAppNumber').value;
+      if (!name || !email || !whatsapp || cart.length === 0) {
         alert('Please fill in all fields and add items to the cart.');
         return;
       }
-      const orderDetails = `New Order from Shalom Cakes\n\nCustomer: ${name}\nEmail: ${email}\n\nItems:\n${cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('\n')}\n\nTotal: UGX ${Math.round(cart.reduce((sum, item) => sum + item.price * item.quantity, 0)).toLocaleString('en-UG')}\n\nNotes: ${notes || 'None'}`;
-      orderSummary.innerHTML = `Thank you, ${name}! Your order has been placed.<br><br>Items:<br>${cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('<br>')}<br><br>Notes: ${notes || 'None'}<br>Email: ${email}`;
-      
-      // WhatsApp submission
+      const orderDetails = `New Order from Shalom Cakes\n\nCustomer: ${name}\nEmail: ${email}\nWhatsApp: ${whatsapp}\n\nItems:\n${cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('\n')}\n\nTotal: UGX ${Math.round(cart.reduce((sum, item) => sum + item.price * item.quantity, 0)).toLocaleString('en-UG')}\n\nNotes: ${notes || 'None'}`;
+      orderSummary.innerHTML = `Thank you, ${name}! Your order has been placed.<br><br>Items:<br>${cart.map(item => `${item.product} (x${item.quantity}): UGX ${Math.round(item.price * item.quantity).toLocaleString('en-UG')}`).join('<br>')}<br><br>Notes: ${notes || 'None'}<br>Email: ${email}<br>WhatsApp: ${whatsapp}`;
+    
+      // WhatsApp submission (replace with your real WhatsApp number)
       const whatsappMessage = encodeURIComponent(orderDetails);
-      window.open(`https://wa.me/740017213?text=${whatsappMessage}`, '_blank');
-      
+      window.open(`https://wa.me/256740017213?text=${whatsappMessage}`, '_blank');
+    
       // Email submission
       const emailSubject = encodeURIComponent('New Order from Shalom Cakes');
       const emailBody = encodeURIComponent(orderDetails);
       window.location.href = `mailto:admin@shalomcakes.com?subject=${emailSubject}&body=${emailBody}`;
-      
+    
       orderModal.classList.remove('hidden');
       cart = [];
       updateCart();
       document.getElementById('customerName').value = '';
       document.getElementById('customerEmail').value = '';
+      document.getElementById('WhatsAppNumber').value = '';
       document.getElementById('orderNotes').value = '';
     });
 
     closeOrderModal.addEventListener('click', () => {
       orderModal.classList.add('hidden');
     });
-  </script>
-  <script>
-  const searchBar = document.getElementById("searchBar");
-  const allProducts = document.querySelectorAll(".cartItems .bg-white");
 
-  searchBar.addEventListener("input", function () {
-    const searchTerm = this.value.toLowerCase();
-
-    allProducts.forEach(product => {
-      const textContent = product.textContent.toLowerCase();
-      product.style.display = textContent.includes(searchTerm) ? "block" : "none";
+    // Show cart section when cart button is clicked (scroll to order form)
+    cartButton.addEventListener('click', () => {
+      document.getElementById('cartItems').scrollIntoView({ behavior: 'smooth' });
     });
-  });
-</script>
+
+    // Initial cart update
+    updateCart();
+  </script>
+
 
 </body>
-
 </html>
